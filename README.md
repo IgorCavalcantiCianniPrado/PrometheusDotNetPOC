@@ -6,7 +6,7 @@ O Prometheus é uma ferramenta de monitoramento que obtem, de forma ativa (pulli
 
 # Metricas
 Há 4 tipos de métricas possíveis para se gerar no '/metrics' da aplicação para que o Prometheus pegue as informações:
-=> Counters
-=> Gauges
-=> Histogram
-=> Summary
+* Counters
+* Gauges
+* Histogram
+* Summary
