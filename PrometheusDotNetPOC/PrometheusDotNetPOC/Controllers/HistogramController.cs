@@ -8,8 +8,6 @@ namespace PrometheusDotNetPOC.Controllers
     [ApiController]
     public class HistogramController : ControllerBase
     {
-        //Continue in here
-
         [HttpGet] public IActionResult Get()
         {
             var OrderValueHistogram = Metrics.CreateHistogram("api_histogram", "Random number generated in each request.",
