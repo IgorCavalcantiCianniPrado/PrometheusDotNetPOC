@@ -8,14 +8,19 @@ namespace PrometheusDotNetPOC.Controllers
     public class CounterController : ControllerBase
     {
         [HttpGet]
-        public void Get()
-        {
-            var counter = Metrics.CreateCounter("peopleapi_path_counter", "Counts requests to the People API endpoints", new CounterConfiguration
+        public IActionResult Get()
+        {      
+            var counter = Metrics.CreateCounter("api_counter", "Counts requests to this endpoint", new CounterConfiguration
             {
                 LabelNames = new[] { "method", "endpoint" }
             });
 
             counter.WithLabels(HttpContext.Request.Method, HttpContext.Request.Path).Inc();
+
+            return Ok($"The Prometheus Counter Metric was incremented: {counter.WithLabels(HttpContext.Request.Method, HttpContext.Request.Path).Value}");
         }
     }
 }
+
+
+

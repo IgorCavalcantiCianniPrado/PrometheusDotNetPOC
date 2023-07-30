@@ -11,17 +11,6 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Custom Metrics to count requests for each endpoint and the method
-//var counter = Metrics.CreateCounter("peopleapi_path_counter", "Counts requests to the People API endpoints", new CounterConfiguration
-//{
-//    LabelNames = new[] { "method", "endpoint" }
-//});
-//app.Use((context, next) =>
-//{
-//    counter.WithLabels(context.Request.Method, context.Request.Path).Inc();
-//    return next();
-//});
-
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -31,7 +20,6 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-//Tests
 app.UseRouting();
 app.UseHttpMetrics();
 
