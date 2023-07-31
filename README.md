@@ -12,5 +12,4 @@ Há 4 tipos de métricas possíveis para se gerar no '/metrics' da aplicação p
 * **Summary:** métricas que tem seus eventos exibidos dentro de um "resumo". Exemplo: número de requests feitos em uma API específica nos últimos 10 minutos.
 
 # TODO
-1. Hoje há apenas a métrica **Counter** sendo gerada. A ideia é se ter pelo menos uma métrica de cada tipo.
-2. Integrar a solução do Prometheus ao Grafana para obter uma observabilidade completa. 
+Integrar a solução do Prometheus ao Grafana para obter uma observabilidade completa. 
